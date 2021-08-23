@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<nav >
+    <div class="nav-container">  
+    <ul>
+        
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Home</a></li>
+      </ul>
+    </div>
+</nav>
+  
+
+  {%  for post in all_posts_list %}
+  <div class="container">
+
+      <div class="blogs" >
+          <h1> 01
+              <a href="{% url 'post_detail' post.pk %}">  
+                  {{ post.title }}</h1>
+                </a>
+                <p> Author: {{ post.author }}  </p>
+                <p>  {{ post.body }}  </p>
+                
+            </div>
+        </div>
+          {% endfor %}
+    <footer>  all right reserved to Joshua Palmier</footer>
+
+{% endblock content %}      
+
+
+
+  
